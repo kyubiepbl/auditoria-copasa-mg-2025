@@ -1,0 +1,11 @@
+linhas_log = [
+    "id_erro;id_contrato;tipo_erro;valor_livro;valor_auditado;distorcao_apurada;impacto_materialidade\n",
+    "ERR-2025-01;CT-2025-089;Superavaliação;500000.00;420000.00;80000.00;0\n",
+    "ERR-2025-02;CT-2025-104;Ausência de Suporte;1500000.00;0.00;1500000.00;0\n",
+    "ERR-2025-03;CT-2025-212;Capitalização Indevida;75000.00;0.00;75000.00;0\n",
+    "ERR-2025-04;CT-2025-301;Falha de Corte (Cut-off);320000.00;0.00;320000.00;0\n",
+    "ERR-2025-05;CT-2025-005;Duplicidade de Registro;210000.00;0.00;210000.00;0\n"
+]
+
+with open("log_erros_inseridos.txt", "w", encoding="utf-8") as f:
+    f.writelines(linhas_log)
