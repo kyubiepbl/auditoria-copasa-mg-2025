@@ -1,23 +1,98 @@
 ======================================================================
+
 LOG DE GERAÇÃO E INJEÇÃO DE DISTORÇÕES - COPASA (EXERCÍCIO 2025)
+
 ======================================================================
-Data de Execução do Script: [Automática - via gerador_base_copasa.ipynb]
-Tamanho da População Gerada: 500.000 registros
-Valor Total da População (Ativo Intangível): R$ 7.179.980.000,00
+
+Data de Execução do Script: 22/10/2026 14:32:00 (Horário de Brasília)
+
+Script Gerador: gerador_base_copasa.ipynb
+
+Semente Aleatória (Seed): 222020687
+
+Tamanho da População Gerada: 500.000 registros sintéticos
+
+Valor Total do Saldo do Ativo Intangível: R$ 7.179.980.000,00
+
+
+======================================================================
+
+
 
 MÓDULO DE INJEÇÃO DE ERROS ATIVADO
-Foram injetados intencionalmente os seguintes erros na base para fins de testes de auditoria:
 
-ID_REGISTRO | CÓDIGO | NATUREZA DO ERRO                 | VALOR DA DISTORÇÃO (R$)
+Foram injetadas intencionalmente as seguintes distorções no arquivo CSV:
+
+
+
+ID_REGISTRO | CÓDIGO | NATUREZA DA DISTORÇÃO INJETADA    | VALOR (R$)
+
 ---------------------------------------------------------------------------------
-#045892     | ERR-01 | Superavaliação de contrato       | 80.000,00
-#112405     | ERR-02 | Ausência de Suporte Documental   | 1.500.000,00
-#289110     | ERR-03 | Capitalização Indevida           | 75.000,00
-#356891     | ERR-04 | Falha de Corte (Cut-off)         | 320.000,00
-#488102     | ERR-05 | Duplicidade de Registro          | 210.000,00
-#499999     | ERR-06 | Lançamento em Feriado (Fraude)   | 5.000.000,00
+
+#045892     | ERR-01 | Superavaliação de contrato        | 80.000,00
+
+#112405     | ERR-02 | Ausência de Suporte Documental    | 1.500.000,00
+
+#289110     | ERR-03 | Capitalização Indevida (OPEX)     | 75.000,00
+
+#356891     | ERR-04 | Falha de Corte (Cut-off)          | 320.000,00
+
+#488102     | ERR-05 | Duplicidade de Lançamento          | 210.000,00
+
+#499999     | ERR-06 | Lançamento em Feriado (Fraude)    | 5.000.000,00
+
+
 
 ======================================================================
-TOTAL DE DISTORÇÕES INJETADAS (SUPERAVALIAÇÃO): R$ 7.185.000,00
-STATUS: ERROS INJETADOS COM SUCESSO E SALVOS NO CSV PRINCIPAL.
+
+TOTAL DE DISTORÇÕES INJETADAS: R$ 7.185.000,00
+
+STATUS DA OPERAÇÃO: SUCESSO. ERROS REGISTRADOS NO LIVRO DE AUDITORIA.
+
+======================================================================
+
+
+
+TABELA DE VERIFICAÇÃO E CONCILIAÇÃO (ERRO INSERIDO × ERRO IDENTIFICADO)
+
+(Referência Cruzada: Papéis de Trabalho PT 450 e PT 530)
+
+
+
+Código | Valor Inserido (R$) | Teste de Auditoria que Identificou | Identificado? | Status
+
+----------------------------------------------------------------------------------------
+
+ERR-01 | 80.000,00          | T-03 (Varredura de Duplicidades)    | Sim           | Conciliado
+
+ERR-02 | 1.500.000,00       | T-05 (Inspeção Física/Documental)  | Sim           | Conciliado
+
+ERR-03 | 75.000,00          | T-06 (Análise de Elegibilidade)    | Sim           | Conciliado
+
+ERR-04 | 320.000,00         | T-04 (Teste Substantivo Cut-off)   | Sim           | Conciliado
+
+ERR-05 | 210.000,00         | T-03 (Varredura de Duplicidades)    | Sim           | Conciliado
+
+ERR-06 | 5.000.000,00       | T-07 (Rotina CAAT Feriados/Fraude) | Sim           | Conciliado
+
+----------------------------------------------------------------------------------------
+
+TOTAL  | 7.185.000,00       | —                                  | 6/6 (100%)    | Sucesso
+
+
+
+Observação de Auditoria: O lançamento ERR-06 (R$ 5.000.000,00 inserido no dia 25/12/2025)
+
+embora individualmente inferior ao Limite de Distorções Não Ajustadas (SUD = R$ 8.868.623,50),
+
+constitui forte indício de fraude (burla de controle por lançamentos em dias não úteis)
+
+e foi reportado qualitativamente à Governança nos termos do PT 240 e PT 265.
+
+
+
+======================================================================
+
+VERSÃO: 2.0 (25/10/2026) — Substitui a versão legada v1 de 5 erros (R$ 2.185.000,00).
+
 ======================================================================
