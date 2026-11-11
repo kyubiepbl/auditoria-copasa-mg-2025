@@ -1,6 +1,6 @@
 # Dicionário de Dados — Auditoria COPASA (DFP 2025)
 
-Este documento descreve as variáveis, tipos de dados e significados das métricas e bases de amostragem utilizadas nos papéis de trabalho de auditoria (**PT 320** e **PT 530**) para a verificação de ativos da Companhia de Saneamento de Minas Gerais (COPASA).
+Este documento descreve as variáveis, tipos de dados e significados das métricas e bases de amostragem utilizadas nos papéis de trabalho de auditoria (**PT-320** e **PT-530**) para a verificação de ativos da Companhia de Saneamento de Minas Gerais (COPASA).
 
 ---
 
@@ -14,7 +14,7 @@ Este documento descreve as variáveis, tipos de dados e significados das métric
 | `Perc_Materialidade_Execucao`| Percentual (`%`) | PT 320 (Premissa de Auditoria) | Percentual de redução do risco de auditoria (75,0%). |
 | `Materialidade_Execucao` | Monetário (`R$`) | Calculado (`Mat_Global * Perc_Execucao`) | Alça de segurança para a execução dos procedimentos (R$ 133.029.352,50). |
 | `Limite_SUD` | Monetário (`R$`) | Calculado (`Mat_Global * 5%`) | Limite para acúmulo de distorções claramente insignificantes (R$ 8.868.623,50). |
-| `Valor_Populacao_Testada` | Monetário (`R$`) | DFP COPASA 2025 / Amostragem | Saldo da população submetida ao teste de amostragem (R$ 7.179.980.000,00). |
+| `Valor_Populacao_Testada` | Monetário (`R$`) | DFP COPASA 2025 (Saldo do Ativo Intangível) | Saldo da população submetida ao teste de amostragem (R$ 7.179.980.000,00). |
 | `Fator_Confianca` | Numérico (`Float`) | Tabela de Poisson (NBC TA 530) | Fator associado a 95% de nível de confiança para zero erros esperados (3,0). |
 | `Intervalo_Amostragem` | Monetário (`R$`) | Calculado (`Mat_Execucao / Fator_Confianca`) | Amplitude monetária entre as seleções sistemáticas (R$ 44.343.117,50). |
 | `Tamanho_Amostra_Qtd` | Inteiro (`Integer`) | Calculado (`ARRED.PARA.CIMA(Populacao / Intervalo)`) | Quantidade mínima de itens/contratos selecionados para a amostra (162 itens). |
@@ -25,12 +25,13 @@ Este documento descreve as variáveis, tipos de dados e significados das métric
 
 | Coluna | Tipo de Dado | Exemplo | Descrição |
 | :--- | :--- | :--- | :--- |
-| `ID_Registro` | Inteiro | `45892` | Identificador único do lançamento de adição ao ativo. |
+| `ID_Registro` | Inteiro | `45892` | Identificador único da unidade patrimonial do saldo do ativo intangível. |
 | `Data_Lancamento` | Data (`YYYY-MM-DD`)| `2025-05-14` | Data de contabilização do ativo no sistema patrimonial. |
 | `Municipio` | Texto / String | `Montes Claros` | Município mineiro vinculado à concessão/operação. |
-| `Tipo_Custo` | Texto / String | `Material de Construção` | Classificação do custo capitalizado. |
+| `Descricao_Obra` | Texto / String | `Ampliação ETE Arrudas` | Descrição técnica do projeto de saneamento ou classificação do custo. |
 | `Nota_Fiscal_Referencia` | Texto / String | `5028854` | Número da nota fiscal associada (ou "ISENTO"). |
-| `Valor_BRL` | Monetário (`R$`) | `R$ 520.400,00` | Valor registrado no Razão Contábil do período. |
+| `Valor_BRL` | Monetário (`Float`) | `520400.00` | Valor registrado no Razão Contábil do período. |
+| `Usuario_Aprovador` | Texto / String | `USR_ENG_44` | Matrícula do usuário que autorizou o lançamento no ERP. |
 
 ---
 
