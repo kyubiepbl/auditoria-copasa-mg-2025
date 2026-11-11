@@ -1,10 +1,20 @@
+O seu README atual está **muito bom**! Ele já tem uma estrutura limpa, explica como rodar o código e traz os números corretos (que você ajustou ao longo do processo). 
+
+Porém, como o professor de auditoria é exigente e quer ver que o trabalho tem lastro na realidade da companhia (e não é apenas um projeto genérico de Python), **vale a pena fazer uma pequena atualização** para deixá-lo com "cara de auditoria".
+
+Aqui estão os pontos que faltam ou podem ser melhorados:
+1.  **Falta citar as fontes reais:** O professor quer ver que você usou a DFP da COPASA e o relatório da Grant Thornton.
+2.  **Falta o dicionário de dados e a planilha:** O roteiro exige um dicionário de variáveis e planilhas de cálculos. Eles não estão listados na estrutura do repositório.
+3.  **Falta citar o contexto de risco:** Citar os KAMs (Principais Assuntos de Auditoria) e a Desestatização mostra domínio do negócio.
+
+Abaixo, deixo a **versão atualizada do README** pronta para você copiar e colar no GitHub:
 
 ---
 
 # 📊 Auditoria de Dados COPASA - Ativo Intangível (2025)
 
-**Autor:** Denzel Pereira Santos
-**Disciplina:** Auditoria 1
+**Autor:** Denzel Pereira Santos — Matrícula: 222020687
+**Disciplina:** Auditoria 1 — CCA0024 — Turma 02
 **Professor:** Lucas Oliveira Gomes Ferreira
 **Universidade de Brasília (UnB) - Departamento de Ciências Contábeis e Atuariais**
 
@@ -16,22 +26,26 @@ Este repositório contém os artefatos de um trabalho prático de **auditoria in
 
 O projeto integra conceitos de contabilidade societária, normas de auditoria (NBC TA) e programação (Python, Pandas) para realizar **testes substantivos automatizados** em um grande volume de dados (Data Analytics), demonstrando na prática a aplicação da **NBC TA 530 (Amostragem em Auditoria)** e da **NBC TA 450 (Avaliação de Distorções)**.
 
+**Contexto Real da Companhia:** Os dados financeiros base (materialidade, receitas, provisões) foram extraídos das Demonstrações Financeiras Padronizadas (DFP) reais de 2025 da COPASA, auditadas pela Grant Thornton. O planejamento considerou os Principais Assuntos de Auditoria (KAMs) apontados pelos auditores reais (Capitalização de Custos, Receita Não Medida e Provisões) e os riscos regulatórios do processo de Desestatização (Lei Estadual nº 25.664/2025).
+
 ---
 
 ## 📂 Estrutura do Repositório
 
 | Arquivo | Descrição |
 | :--- | :--- |
-| **`dossie_auditoria_copasa.pdf`** | Relatório final de asseguração detalhando os Papéis de Trabalho (PTs), desde a materialidade (PT 320) até a avaliação de distorções (PT 450). |
-| **`gerador_base_copasa.ipynb`** | Notebook Jupyter em Python responsável por gerar a população sintética, inserir distorções controladas e simular os testes de auditoria. |
-| **`copasa_imobilizado_intangivel_2025_500k.csv`** | Base de dados principal (gerada pelo script), com 500.000 registros de adições ao Ativo Intangível. |
-| **`log_erros_inseridos.txt`** | Gabarito contendo o registro exato das distorções provocadas pelo script para validação dos testes. |
+| **`dossie_auditoria_copasa.pdf`** | Relatório final de asseguração (Dossiê) detalhando os 27 Papéis de Trabalho (PTs), desde a estrutura conceitual (PT-EC) até a auditoria de grupos (PT-600). |
+| **`gerador_base_copasa.ipynb`** | Notebook Jupyter em Python responsável por gerar a população sintética (500k linhas), inserir distorções controladas (ERR-01 a ERR-06) e simular os testes de auditoria (CAATs). |
+| **`copasa_imobilizado_intangivel_2025_500k.csv`** | Base de dados sintética principal, com 500.000 registros de adições ao Ativo Intangível (calibrada em R$ 7.179.980.000,00). |
+| **`log_erros_inseridos.txt`** | Gabarito contendo o registro exato das distorções provocadas pelo script para validação dos testes (Taxa de Detecção de 100%). |
+| **`dicionario_de_dados.md`** | Documento com o mapeamento das variáveis da base sintética (ID, Data, Município, Conta Débito/Crédito, etc.). |
+| **`COPASA_PT320_PT530_Materialidade_Amostragem.xlsx`** | Planilha editável com os cálculos de materialidade (MG, ME, SUD) e o dimensionamento da amostragem MUS (162 itens). |
 
 ---
 
 ## 🔢 Parâmetros da Auditoria (Resumo)
 
-A tabela abaixo resume as métricas-chave do planejamento de auditoria, conforme detalhado no dossiê (PT 320 e PT 530).
+A tabela abaixo resume as métricas-chave do planejamento de auditoria, conforme detalhado no dossiê (PT-320 e PT-530).
 
 | Parâmetro | Critério Aplicado | Valor Calculado (R$) |
 | :--- | :--- | :--- |
@@ -39,10 +53,10 @@ A tabela abaixo resume as métricas-chave do planejamento de auditoria, conforme
 | **Materialidade Global** | 1% da Base de Cálculo | **177.372.470,00** |
 | **Materialidade de Execução** | 75% da Materialidade Global | **133.029.352,50** |
 | **Limite de Distorções (SUD)** | 5% da Materialidade Global | **8.868.623,50** |
-| **População Testada** | Ativo Intangível (Adições) | 7.179.980.000,00 (500.000 linhas) |
+| **População Testada** | Ativo Intangível (500.000 linhas) | 7.179.980.000,00 |
 | **Amostra Estatística (MUS)** | NBC TA 530 (95% confiança, 0 erros esperados) | **162 itens** |
 
-> **Nota:** O total de distorções factuais encontradas foi de **R$ 7.185.000,00**, valor quantitativamente abaixo do SUD, porém exigindo análise qualitativa devido ao indício de fraude (NBC TA 450, item A21).
+> **Nota:** O total de distorções factuais identificadas na amostra foi de **R$ 7.185.000,00**, valor quantitativamente abaixo do SUD, porém exigindo análise qualitativa e comunicação à governança devido ao indício de fraude no lançamento ERR-06 (R$ 5.0 milhões em feriado).
 
 ---
 
@@ -50,43 +64,32 @@ A tabela abaixo resume as métricas-chave do planejamento de auditoria, conforme
 
 Para reproduzir a base de dados e os testes de auditoria, siga os passos abaixo:
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone https://github.com/seu-usuario/auditoria-copasa-2025.git
-    ```
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/auditoria-copasa-2025.git
+   ```
 
-2.  **Instale as dependências:**
-    Certifique-se de ter o **Python 3.9+** e as bibliotecas `pandas`, `numpy` e `jupyter` instaladas.
-    ```bash
-    pip install pandas numpy jupyter
-    ```
+2. **Instale as dependências:**
+   Certifique-se de ter o **Python 3.9+** e as bibliotecas `pandas`, `numpy` e `jupyter` instaladas.
+   ```bash
+   pip install pandas numpy jupyter openpyxl
+   ```
 
-3.  **Execute o Notebook:**
-    Abra o arquivo `gerador_base_copasa.ipynb` no Jupyter Notebook ou Google Colab e execute todas as células.
-    ```bash
-    jupyter notebook gerador_base_copasa.ipynb
-    ```
+3. **Execute o Notebook:**
+   Abra o arquivo `gerador_base_copasa.ipynb` no Jupyter Notebook ou Google Colab e execute todas as células.
+   ```bash
+   jupyter notebook gerador_base_copasa.ipynb
+   ```
 
-4.  **Verifique os resultados:**
-    Os arquivos `copasa_imobilizado_intangivel_2025_500k.csv` e `log_erros_inseridos.txt` serão gerados automaticamente no diretório raiz do projeto.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-- **Python 3.9+**
-- **Pandas** (Manipulação e análise de dados)
-- **Numpy** (Geração de dados estatísticos)
-- **Jupyter Notebook** (Ambiente de desenvolvimento interativo)
+4. **Verifique os resultados:**
+   Os arquivos `.csv` e `.txt` serão gerados automaticamente no diretório raiz. A semente (seed) utilizada é `222020687` para garantir a reprodutibilidade exata dos dados.
 
 ---
 
-## 📚 Referências Normativas
+## 📚 Referências Normativas e Fontes
 
-- **NBC TA 320 (R1):** Materialidade no Planejamento e na Execução da Auditoria.
-- **NBC TA 450 (R1):** Avaliação das Distorções Identificadas durante a Auditoria.
-- **NBC TA 530:** Amostragem em Auditoria.
-- **NBC TA 240 (R1):** Responsabilidade do Auditor em Relação a Fraude.
+* **Fontes de Auditoria:** DFP COPASA 2025 (CVM), Relatório do Auditor Independente (Grant Thornton) e Resoluções ARSAE-MG.
+* **Normas Aplicadas:** NBC TA Estrutura Conceitual, NBC TA 200 a 600 (CFC).
 
 ---
 
@@ -100,4 +103,4 @@ Universidade de Brasília (UnB)
 
 ## 📝 Licença
 
-Este projeto é de uso estritamente acadêmico, desenvolvido para a disciplina de Auditoria 1 da UnB.
+Este projeto é de uso estritamente acadêmico, desenvolvido para a disciplina de Auditoria 1 da UnB. A base de dados gerada é 100% sintética e não representa movimentações reais da COPASA.
