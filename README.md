@@ -1,13 +1,3 @@
-O seu README atual está **muito bom**! Ele já tem uma estrutura limpa, explica como rodar o código e traz os números corretos (que você ajustou ao longo do processo). 
-
-Porém, como o professor de auditoria é exigente e quer ver que o trabalho tem lastro na realidade da companhia (e não é apenas um projeto genérico de Python), **vale a pena fazer uma pequena atualização** para deixá-lo com "cara de auditoria".
-
-Aqui estão os pontos que faltam ou podem ser melhorados:
-1.  **Falta citar as fontes reais:** O professor quer ver que você usou a DFP da COPASA e o relatório da Grant Thornton.
-2.  **Falta o dicionário de dados e a planilha:** O roteiro exige um dicionário de variáveis e planilhas de cálculos. Eles não estão listados na estrutura do repositório.
-3.  **Falta citar o contexto de risco:** Citar os KAMs (Principais Assuntos de Auditoria) e a Desestatização mostra domínio do negócio.
-
-Abaixo, deixo a **versão atualizada do README** pronta para você copiar e colar no GitHub:
 
 ---
 
