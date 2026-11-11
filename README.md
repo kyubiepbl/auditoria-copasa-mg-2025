@@ -26,7 +26,7 @@ O projeto integra conceitos de contabilidade societária, normas de auditoria (N
 | :--- | :--- |
 | **`dossie_auditoria_copasa.pdf`** | Relatório final de asseguração (Dossiê) detalhando os 27 Papéis de Trabalho (PTs), desde a estrutura conceitual (PT-EC) até a auditoria de grupos (PT-600). |
 | **`gerador_base_copasa.ipynb`** | Notebook Jupyter em Python responsável por gerar a população sintética (500k linhas), inserir distorções controladas (ERR-01 a ERR-06) e simular os testes de auditoria (CAATs). |
-| **`copasa_imobilizado_intangivel_2025_500k.csv`** | Base de dados sintética principal, com 500.000 registros de adições ao Ativo Intangível (calibrada em R$ 7.179.980.000,00). |
+| **`copasa_imobilizado_intangivel_2025_500k.csv`** | Base de dados sintética principal, com 500.000 registros de unidades patrimoniais que compõem o Saldo do Ativo Intangível em 31/12/2025. |
 | **`log_erros_inseridos.txt`** | Gabarito contendo o registro exato das distorções provocadas pelo script para validação dos testes (Taxa de Detecção de 100%). |
 | **`dicionario_de_dados.md`** | Documento com o mapeamento das variáveis da base sintética (ID, Data, Município, Conta Débito/Crédito, etc.). |
 | **`COPASA_PT320_PT530_Materialidade_Amostragem.xlsx`** | Planilha editável com os cálculos de materialidade (MG, ME, SUD) e o dimensionamento da amostragem MUS (162 itens). |
